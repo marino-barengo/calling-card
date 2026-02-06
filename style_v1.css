@@ -29,10 +29,10 @@ p {
     grid-template-columns: 3fr 5fr 5fr 5fr 5fr 3fr;   /* Definition abstand kolumne */
     grid-template-areas:
     ". name name name name ." /* deifiniton was welche/wieviele kolumnen überquert */
-    ". bio bio . . ."
+    ". bio bio bio . ."
     ". image-1 image-1 text-1 . ." /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
-    ". image-2 image-2 image-2 text-2 ."
-    ". image-3 image-3 image-3 text-3 ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+    ". . image-2 image-2 text-2 ."
+    ". . text-3 image-3 image-3 ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 
 .name {
@@ -55,7 +55,6 @@ p {
     margin: 3%;
     align-self: bottom;
     color: blueviolet
-    
 }
 
 .image-1{
