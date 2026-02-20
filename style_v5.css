@@ -1,6 +1,6 @@
 @font-face{
     font-family:"whois-mono";
-    src: url(https://fontain.org/whois-mono/#@80)format(woff);
+    src: url(ufonts/whois-mono.woffformat)format(woff);
 }
 
 /* ----------------- FONT ----------------- */
@@ -11,6 +11,7 @@ body {
     font-size: 12px;
 }
 
+/* ----------BODY------------------- */
 
 img {
     max-width: 100%; /* Bild passt sich container an */
@@ -18,9 +19,8 @@ img {
 }
 
 h1{
-    margin: 0;
     font-size: 12px;
-    align-self: justify;
+    align-self: center;
 }
 
 p {
@@ -30,11 +30,14 @@ p {
 a {
     color: inherit;
     text-decoration: none;
+    align-self: center;
 }
 
 a:hover{
-    color: black;
+    top: 20px;
 }
+
+/* -------------most likely presets----------- */
 .grid-container {
     display: grid; 
     padding: 50px 50px 10px 50px;
@@ -49,18 +52,18 @@ a:hover{
     ". . . . . image-3 image-3 image-3 text-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 
+
+/* ------------Grid--------------------- */
 .name {
     grid-area: name;
     position: sticky;
-    top: 20px;
     z-index: 15;
+    align-self: center;
 }
 
 .name h1 {
     text-align: left;
     font-size: 12px;
-    margin: 0;
-    margin-bottom: 0px;
     color: rgb(0, 0, 0);
     transition: color 0.3s ease;
     cursor: default;
@@ -70,6 +73,8 @@ a:hover{
 .name h1:hover{
     color:violet;
 }
+
+/* ----------------TITEL---------------- */
 
 .bio {
     grid-area: bio;
@@ -91,14 +96,17 @@ a:hover{
 
 .bio:hover{
     opacity: 1;
+    /* -----------BIO--------------- */
 }
 .IgIcon{
     grid-area: IgIcon;
     position: sticky;
     top: 20px;
     z-index: 15;
-    size: 100%;
+    size: 75%;
 }
+
+/* ---------Instagram -----------*/
 
 .image-1{
     grid-area: image-1;
@@ -117,6 +125,7 @@ a:hover{
     opacity: 0;
     transition: transform 0.5s ease;
 }
+
 
 .image-1:hover .a{
     opacity: 0;
@@ -150,10 +159,10 @@ a:hover{
     transition: transform 0.5s ease;
 }
 
-
-.image-2 img:hover{
-    transform: scale(2.05);
+.image-2 img:active{
+    transform:scale(3.05);
 }
+
 
 .image-3{
     grid-area: image-3;
@@ -170,6 +179,10 @@ a:hover{
     transform:scale(3.05);
 }
 
+
+/* ------------PROJECTS------------- */
+
+
 .text-1{
     grid-area: text-1;
     color: white;
@@ -183,4 +196,29 @@ a:hover{
 .text-3{
     grid-area: text-3;
     color: white;
+}
+
+/* Descriptions */
+
+#zoom-toggle {
+    display: none;
+}
+
+.image {
+    transition: transform 0.6s ease;
+}
+#zoom-toggle:checked ~ .image-wrapper .image {
+    transform: scale(1.5);
+}
+
+/* Bild normal */
+.image-wrapper img {
+  width: 300px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Bild wenn Checkbox aktiv */
+#zoom-toggle:checked + .image-wrapper img {
+  transform: scale(1.5);
 }
