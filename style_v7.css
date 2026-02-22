@@ -133,7 +133,6 @@ opacity: 0.5;
     transition: transform 0.5s ease;
 }
 
-
 .image-1 .b{
     position: absolute;
     top: 0;
@@ -141,7 +140,6 @@ opacity: 0.5;
     opacity: 0;
     transition: transform 0.5s ease;
 }
-
 
 .image-1:hover .a{
     opacity: 0;
@@ -151,7 +149,6 @@ opacity: 0.5;
 .image-1:hover .b{
     opacity: 1;
     transform: scale(125%) 3.3s ease;
-    z-index: 15;
 }
 
 .image-1 img{
@@ -162,6 +159,9 @@ opacity: 0.5;
     z-index: 0;
     transform: scale(2.05);
 }
+
+
+
 /* -------IMG1------------- */
 .image-2{
     grid-area: image-2;
