@@ -49,13 +49,13 @@ opacity: 0.5;
     padding: 40px 40px 40px 40px;
     column-gap: 10px;
     row-gap: 10px;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr;   /* Definition abstand kolumne */
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
     grid-template-areas:
-    " name name name name . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
-    " bio bio bio . . . . . . . . ."
-    ". . . . . image-1 image-1 image-1 text-1 text-1 . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
-    ". . . . image-2 image-2 image-2 text-2 text-2 . . ."
-    ". . . . . image-3 image-3 image-3 text-3 text-3 . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+    " name name name name . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
+    " bio bio bio . . . . . . . . . ."
+    ". . text-1 text-1 image-1 image-1 image-1 image-1 image-1 image-1 . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    ". . . . image-2 image-2 image-2 text-2 text-2 . . . ."
+    ". . . . . image-3 image-3 image-3 text-3 text-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 
 
@@ -141,6 +141,87 @@ opacity: 0.5;
     transition: transform 0.5s ease;
 }
 
+.image-1 .c{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .d{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .e{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .f{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .g{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .h{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .j{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .k{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .l{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+.image-1 .m{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+
+/* Pictres hidden */
+
+
 .image-1:hover .a{
     opacity: 0;
     transform: scale(125%) 3.3s ease;
@@ -157,7 +238,7 @@ opacity: 0.5;
 
 .image-1 img:hover{
     z-index: 0;
-    transform: scale(2.05);
+    transform: scale(125%);
 }
 
 
@@ -175,7 +256,7 @@ opacity: 0.5;
 }
 
 .image-2 img:hover{
-    transform:scale(3.05);
+    transform:scale(125%);
 }
 
 
@@ -192,7 +273,7 @@ opacity: 0.5;
 }
 
 .image-3 img:hover{
-    transform:scale(3.05);
+    transform:scale(155%);
 }
 
 
