@@ -51,7 +51,7 @@ opacity: 0.5;
     row-gap: 10px;
     grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
     grid-template-areas:
-    " name name name name . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
+    " name name name . . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
     " bio bio bio . . . . . . . . . ."
     "text-1 text-1 . . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
     "text-2 text-2 . . image-2 image-2 image-2 . . . . . ."
@@ -125,35 +125,14 @@ opacity: 0.5;
 /* ---------Instagram -----------*/
 
 
-
-/* Animation */
-
 .image-1{
     grid-area: image-1;
     position: relative;
+    top: 80px;
 }
+         
 
-.image-1 img{
-    transition: transform 0.5s ease;
-}
-
-
-.text-1 .b{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-
-
-.image-1:hover .a{
-    opacity: 1;
-    transform: scale(125%) 3.3s ease;
-}                   /* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
-
-.image-1:hover .b{
-    opacity: 1;
+.image-1:hover{
     transform: scale(125%) 3.3s ease;
     z-index: 15;
 }
@@ -164,16 +143,36 @@ opacity: 0.5;
 
 .image-1 img:hover{
     z-index: 0;
-    position: justify;
-    transform: scale(2.05);
+    transform: scale(1.55);
+    filter: blur(0px) 
 }
 
+.image-1 .text-1{
+    position: absolute;
+}
+
+.image-1 img:not(:hover), .text-1{
+    filter: blur(5px) 
+}
+
+.image-1 img:hover, .text-1{
+    z-index: 0;
+    
+}
 
 /* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
 
+.text-1{
+    grid-area: text-1;
+    position:relative;
+    color: rgb(0, 0, 0);
+    top: 80px;
+    display: block;
+}
 
 
-/* -------IMG1------------- */
+
+/* -------IMG1 Text 1------------- */
 .image-2{
     grid-area: image-2;
     position: relative;
@@ -192,11 +191,6 @@ opacity: 0.5;
 
 .image-2:hover .text-2{
     opacity: 1;
-    left: -300px;
-}
-
-.image-1:hover .image-1{
-    filter: blur(2px);
 }
 
 /* IMG 2 */
@@ -231,26 +225,18 @@ opacity: 0.5;
 /* ------------PROJECTS------------- */
 
 
-.text-1{
-    grid-area: text-1;
-    top: 50px;
-    color: rgb(0, 0, 0);
-    display: none
-}
-
 .text-2{
     grid-area: text-2;
     color: rgb(0, 0, 0);
-   opacity: 0;
-    position: absolute;
+    position: relative;
+    top: 80px;
 }
 
 .text-3{
     grid-area: text-3;
     color: rgb(0, 0, 0);
+    position: relative;
+    top: 80px;
 }
 
 /* Descriptions */
-.head{
-    filter: blur(2px)
-}
