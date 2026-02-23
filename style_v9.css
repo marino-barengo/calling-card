@@ -1,0 +1,245 @@
+@font-face{
+    font-family:"whois-mono";
+    src: url(ufonts/whois-mono.woffformat)format(woff);
+}
+
+/* ----------------- FONT ----------------- */
+
+body {
+background: url('data/Background2.png'), #ffffff;
+
+    font-family: "whois-mono", monospace;
+    font-size: 12px;
+}
+
+/* ----------BODY------------------- */
+
+img {
+    max-width: 50%; /* Bild passt sich container an */
+    height: auto;   /* Höhe behält proportion */
+}
+
+h1{
+    font-size: 12px;
+    align-self: center;
+    position: sticky;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    align-self: center;
+}
+
+a:link{
+    opacity: 1;
+}
+
+a:visited {
+opacity: 0.5;
+}
+
+/* -------------most likely presets----------- */
+.grid-container {
+    display: grid; 
+    padding: 40px 40px 40px 40px;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
+    grid-template-areas:
+    " name name name . . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
+    " bio bio bio . . . . . . . . . ."
+    "text-1 text-1 . . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    "text-2 text-2 . . image-2 image-2 image-2 . . . . . ."
+    "text-3 text-3 . . . image-3 image-3 image-3 . . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+}
+
+
+/* ------------Grid--------------------- */
+.name{
+    grid-area: name;
+    position: sticky;
+    top: 10px;
+    z-index: 15;
+    align-self: center;
+}
+
+.name h1 {
+    text-align: left;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    cursor: default;
+    position: sticky;
+}
+
+.name h1:hover{
+    color:violet;
+    transform: scale(110%);
+    position: sticky;
+}
+
+/* ----------------TITEL---------------- */
+
+.bio {
+    grid-area: bio;
+    position: sticky;
+    top: 50px;
+    /* align-self, align vertically */
+}
+
+.bio p {
+    margin: 0;
+    align-self: bottom;
+    opacity: 1;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: justify;
+    transition: opacity 0.3s ease;
+    color: rgb(0, 0, 0)
+}
+
+.bio:hover{
+    opacity: 1;
+    /* -----------BIO--------------- */
+}
+.IgIcon{
+    grid-area: IgIcon;
+    position: sticky;
+    top: 20px;
+    z-index: 15;
+}
+
+.IgIcon img{
+    transition: transform 0.2s ease;
+}
+
+.IgIcon img:hover{
+    transform: scale(110%);
+}
+
+/* ---------Instagram -----------*/
+
+.grid-container {
+    display: flex;
+    flex-wrap: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.left.column, .right-column{
+    flex: 1;
+}
+
+.item {
+  flex: 1 1 calc(33.333% - 10px);
+  box-sizing: border-box;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.image-1 {
+    overflow: hidden;
+}
+
+.image-1 img {
+    transition: transform 0.4s ease;
+}
+
+/* Bild wird größer */
+.image-1 img:hover {
+    transform: scale(1.3);
+}
+
+/* Text standardmäßig unsichtbar */
+.text-1 {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+}
+
+.image-1:hover + .text-1 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
+
+
+
+/* -------IMG1 Text 1------------- */
+.image-2{
+    grid-area: image-2;
+    position: relative;
+}
+
+.image-2 img{
+    position: relative;
+    top: 80px;
+    transition: transform 0.5s ease;
+}
+
+.image-2 img:hover{
+    transform:scale(155%);
+    z-index: 1;
+}
+
+.image-2:hover .text-2{
+    opacity: 1;
+}
+
+/* IMG 2 */
+
+
+.image-3{
+    grid-area: image-3;
+    position: relative;
+    top: -25px;
+}
+
+.image-3 img{
+    position: relative;
+    top: 80px;
+    transition: transform 0.5s ease;
+
+}
+
+.image-3 img:hover{
+    transform:scale(155%);
+    z-index: 1;
+}
+
+.image-3:hover .text-3{
+    opacity: 1;
+    left: -300px;
+}
+
+
+/* IMG 3 */
+
+/* ------------PROJECTS------------- */
+
+
+.text-2{
+    grid-area: text-2;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 80px;
+}
+
+.text-3{
+    grid-area: text-3;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 80px;
+}
+
+/* Descriptions */
