@@ -53,9 +53,9 @@ opacity: 0.5;
     grid-template-areas:
     " name name name name . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
     " bio bio bio . . . . . . . . . ."
-    ". . text-1 text-1 image-1 image-1 image-1 image-1 image-1 image-1 . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
-    ". . . . image-2 image-2 image-2 text-2 text-2 . . . ."
-    ". . . . . image-3 image-3 image-3 text-3 text-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+    "text-1 text-1 text-1 . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    "text-2 text-2 . . image-2 image-2 image-2 . . . . . ."
+    "text-3 text-3 . . . image-3 image-3 image-3 . . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 
 
@@ -63,9 +63,9 @@ opacity: 0.5;
 .name{
     grid-area: name;
     position: sticky;
+    top: 10px;
     z-index: 15;
     align-self: center;
-    position: sticky;
 }
 
 .name h1 {
@@ -124,122 +124,46 @@ opacity: 0.5;
 
 /* ---------Instagram -----------*/
 
-.image-1{
+
+
+/* Animation */
+
+.image-1 {
     grid-area: image-1;
     position: relative;
 }
 
-.image-1 img{
-    transition: transform 0.5s ease;
+.image-1 img {
+    position: absolute;
+    top: 50px;
+    inset: 0;  
+    opacity: 0;
+    transition: transform 0.4s ease;
 }
 
-.image-1 .b{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-
-.image-1 .c{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .d{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .e{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .f{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .g{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .h{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .i{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .j{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .k{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .l{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-.image-1 .m{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.5s ease;
-}
-
-/* Pictres hidden */
 
 
-.image-1:hover .a{
-    opacity: 0;
-    transform: scale(125%) 3.3s ease;
-}                   /* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
-
-.image-1:hover .b{
+.image-1 img:nth-child(1) {
     opacity: 1;
-    transform: scale(125%) 3.3s ease;
 }
 
-.image-1 img{
-   transition: transform 0.5s ease;
+.image-1:hover img {
+    transform: scale(155%);
+    animation: frame 0.6s steps(1) infinite;
+    z-index: 1;
 }
 
-.image-1 img:hover{
-    z-index: 0;
-    transform: scale(125%);
+.image-1:hover img:nth-child(1) { animation-delay: 0s; }
+.image-1:hover img:nth-child(2) { animation-delay: 0.2s; }
+.image-1:hover img:nth-child(3) { animation-delay: 0.4s; }
+.image-1:hover img:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes frame {
+    0%   { opacity: 1; }
+    25%  { opacity: 0; }
 }
+
+/* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
 
 
 
@@ -251,12 +175,18 @@ opacity: 0.5;
 
 .image-2 img{
     position: relative;
-    top: -50%;
+    top: 80px;
     transition: transform 0.5s ease;
 }
 
 .image-2 img:hover{
-    transform:scale(125%);
+    transform:scale(155%);
+    z-index: 1;
+}
+
+.image-2:hover .text-2{
+    opacity: 1;
+    left: -300px;
 }
 
 
@@ -264,7 +194,7 @@ opacity: 0.5;
 .image-3{
     grid-area: image-3;
     position: relative;
-    top: -125px;
+    top: -25px;
 }
 
 .image-3 img{
@@ -282,17 +212,24 @@ opacity: 0.5;
 
 .text-1{
     grid-area: text-1;
-    color: white;
+    top: 50px;
+    color: rgb(0, 0, 0);
+    display: none
 }
 
 .text-2{
     grid-area: text-2;
-    color: white;
+    color: rgb(0, 0, 0);
+   opacity: 0;
+    position: absolute;
 }
 
 .text-3{
     grid-area: text-3;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* Descriptions */
+.head{
+    filter: blur(2px)
+}
