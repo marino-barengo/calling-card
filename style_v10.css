@@ -54,9 +54,9 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     grid-template-areas:
     " name name name . . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
     " bio bio bio . . . . . . . . . ."
-    ". text-1 . . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
-    ". text-2 . . image-2 image-2 image-2 . . . . . ."
-    ". text-3 . . . image-3 image-3 image-3 . . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+    ". text-1 . . .  image-1 image-1 image-1 image-1 . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    ". text-2 . . image-2 image-2 image-2 image-2 . . . . ."
+    ". text-3 . . . image-3 image-3 image-3 image-3 . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 
 
@@ -128,11 +128,11 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     grid-area: image-1;
     position: relative;
     top: 80px;
+    place-items: center;
 }
          
 
 .image-1:hover{
-    transform: scale(125%) 3.3s ease;
     z-index: 15;
 }
 
@@ -146,18 +146,6 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     filter: blur(0px) 
 }
 
-.image-1 .text-1{
-    position: absolute;
-}
-
-.image-1 img:not(:hover), .text-1{
-    filter: blur(5px) 
-}
-
-.image-1 img:hover, .text-1{
-    z-index: 0;
-    filter: blur(0px);
-}
 
 /* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
 

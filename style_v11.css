@@ -54,7 +54,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     grid-template-areas:
     " name name name . . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
     " bio bio bio . . . . . . . . . ."
-    ". text-1 . . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    ". . . . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
     ". text-2 . . image-2 image-2 image-2 . . . . . ."
     ". text-3 . . . image-3 image-3 image-3 . . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
@@ -122,34 +122,38 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* ---------Instagram -----------*/
-
 .image-1 {
-  display: grid;
-  grid-template-columns: 0fr auto; /* text column first, then image */
   grid-area: image-1;
+  position: relative;
+  top: 80px;
+  display: grid;
+  grid-template-columns: 0fr auto; /* text hidden, image natural size */
   align-items: center;
   gap: 20px;
-  transition: grid-template-columns 0.4s ease;
+  transition: grid-template-columns 0.5s ease;
 }
 
 .image-1:hover {
-  grid-template-columns: 1fr auto; /* text expands from the left */
+  grid-template-columns: 1fr auto; /* text slides in */
+  z-index: 15;
 }
 
 .image-1 img {
   transition: transform 0.5s ease;
+  width: 300px;
+  height: auto;
 }
 
 .image-1 img:hover {
   transform: scale(1.55);
-  z-index: 15;
 }
 
 .text-1 {
   overflow: hidden; /* required for 0fr trick */
   opacity: 0;
-  transition: opacity 0.3s ease 0.1s;
-  text-align: left; /* so text sits flush against the image */
+  transition: opacity 0.3s ease 0.2s;
+  color: black;
+  min-width: 150px;
 }
 
 .image-1:hover .text-1 {
