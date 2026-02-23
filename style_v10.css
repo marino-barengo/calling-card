@@ -99,7 +99,6 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     opacity: 1;
     line-height: 20px;
     letter-spacing: 0px;
-    text-align: justify;
     transition: opacity 0.3s ease;
     color: rgb(0, 0, 0)
 }

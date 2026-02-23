@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "whois-mono";
+    src: url(ufonts/whois-mono.woff) format(woff);
+}
+
+body {
+    background: url('data/Background2.png'), #ffffff;
+    font-family: "whois-mono", monospace;
+    font-size: 12px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 12px;
+    align-self: center;
+    position: sticky;
+}
+
+p { margin: 0; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+    align-self: center;
+}
+
+a:link { opacity: 1; }
+a:visited { opacity: 0.5; }
+
+/* GRID CONTAINER - only defined once! */
+.grid-container {
+    display: grid;
+    padding: 40px;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;
+    grid-template-areas:
+        "name name name . . . . . . . . . IgIcon"
+        "bio bio bio . . . . . . . . . . ."
+        ". . . image-1 image-1 image-1 image-1 image-1 image-1 . . . ."
+        ". . image-2 image-2 image-2 image-2 image-2 image-2 . . . . ."
+        ". . . image-3 image-3 image-3 image-3 image-3 image-3 . . . .";
+}
+
+.name {
+    grid-area: name;
+    position: sticky;
+    top: 10px;
+    z-index: 15;
+    align-self: center;
+}
+
+.name h1 {
+    text-align: left;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.name h1:hover {
+    color: violet;
+    transform: scale(110%);
+}
+
+.bio {
+    grid-area: bio;
+    position: sticky;
+    top: 50px;
+}
+
+.bio p {
+    margin: 0;
+    opacity: 1;
+    line-height: 20px;
+    text-align: justify;
+    transition: opacity 0.3s ease;
+    color: rgb(0, 0, 0);
+}
+
+.IgIcon {
+    grid-area: IgIcon;
+    position: sticky;
+    top: 20px;
+    z-index: 15;
+}
+
+.IgIcon img {
+    width: 30px;
+    height: 30px;
+    max-width: none;
+}
+
+.IgIcon img:hover { transform: scale(110%); }
+
+/* IMAGE 1 */
+.image-1 {
+    grid-area: image-1;
+    display: grid;
+    grid-template-columns: 0fr auto;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    transition: grid-template-columns 0.5s ease;
+}
+
+.image-1:hover {
+    grid-template-columns: 1fr auto;
+    z-index: 15;
+}
+
+.image-1 img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.image-1 img:hover { transform: scale(1.3); }
+
+.text-1 {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+    color: black;
+    white-space: nowrap;
+}
+
+.image-1:hover .text-1 { opacity: 1; }
+
+/* IMAGE 2 */
+.image-2 {
+    grid-area: image-2;
+    display: grid;
+    grid-template-columns: 0fr auto;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    transition: grid-template-columns 0.5s ease;
+}
+
+.image-2:hover {
+    grid-template-columns: 1fr auto;
+    z-index: 15;
+}
+
+.image-2 img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.image-2 img:hover { transform: scale(1.3); }
+
+.text-2 {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+    color: black;
+    white-space: nowrap;
+}
+
+.image-2:hover .text-2 { opacity: 1; }
+
+/* IMAGE 3 */
+.image-3 {
+    grid-area: image-3;
+    display: grid;
+    grid-template-columns: 0fr auto;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    transition: grid-template-columns 0.5s ease;
+}
+
+.image-3:hover {
+    grid-template-columns: 1fr auto;
+    z-index: 15;
+}
+
+.image-3 img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.image-3 img:hover { transform: scale(1.3); }
+
+.text-3 {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+    color: black;
+    white-space: nowrap;
+}
+
+.image-3:hover .text-3 { opacity: 1; }
