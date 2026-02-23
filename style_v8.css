@@ -53,7 +53,7 @@ opacity: 0.5;
     grid-template-areas:
     " name name name name . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
     " bio bio bio . . . . . . . . . ."
-    "text-1 text-1 text-1 . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    "text-1 text-1 . . .  image-1 image-1 image-1 . . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
     "text-2 text-2 . . image-2 image-2 image-2 . . . . . ."
     "text-3 text-3 . . . image-3 image-3 image-3 . . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
@@ -128,40 +128,46 @@ opacity: 0.5;
 
 /* Animation */
 
-.image-1 {
+.image-1{
     grid-area: image-1;
     position: relative;
 }
 
-.image-1 img {
+.image-1 img{
+    transition: transform 0.5s ease;
+}
+
+
+.text-1 .b{
     position: absolute;
-    top: 50px;
-    inset: 0;  
+    top: 0;
+    left: 0;
     opacity: 0;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
 }
 
 
-
-.image-1 img:nth-child(1) {
+.image-1:hover .a{
     opacity: 1;
+    transform: scale(125%) 3.3s ease;
+}                   /* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
+
+.image-1:hover .b{
+    opacity: 1;
+    transform: scale(125%) 3.3s ease;
+    z-index: 15;
 }
 
-.image-1:hover img {
-    transform: scale(155%);
-    animation: frame 0.6s steps(1) infinite;
-    z-index: 1;
+.image-1 img{
+   transition: transform 0.5s ease;
 }
 
-.image-1:hover img:nth-child(1) { animation-delay: 0s; }
-.image-1:hover img:nth-child(2) { animation-delay: 0.2s; }
-.image-1:hover img:nth-child(3) { animation-delay: 0.4s; }
-.image-1:hover img:nth-child(4) { animation-delay: 0.6s; }
-
-@keyframes frame {
-    0%   { opacity: 1; }
-    25%  { opacity: 0; }
+.image-1 img:hover{
+    z-index: 0;
+    position: justify;
+    transform: scale(2.05);
 }
+
 
 /* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
 
