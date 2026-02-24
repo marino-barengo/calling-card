@@ -101,7 +101,7 @@ opacity: 0.5;
     position: fixed;
     display: flex;
     background-color: rgba(255, 255, 255, 0);
-    border-radius: 15.04px;
+    border-radius: 25px;
     width: auto;
     height: 50px;
     justify-content: space-between;
@@ -125,6 +125,9 @@ opacity: 0.5;
   left: 10px;
   max-width: 300px;
   transition: opacity 0.5s, transform 0.5s cubic-bezier(0.34, 2, 0.64, 1);
+  background-color: rgb(0, 0, 255);
+  border-radius: 25px;
+  height: 300px;
 }
 
 
