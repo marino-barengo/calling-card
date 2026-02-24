@@ -14,6 +14,7 @@ background: url('data/Background2.png'), #ffffff;
 
     font-family: "whois-mono", monospace;
     font-size: 12px;
+    padding-top: 70px;
 }
 
 /* ----------BODY------------------- */
@@ -32,6 +33,7 @@ h1{
 p {
     margin: 0;
     font-size: large;
+    position: top;
 }
 
 a {
@@ -51,7 +53,7 @@ opacity: 0.5;
 /* -------------most likely presets----------- */
 .grid-container {
     display: grid; 
-    padding: 40px 40px 40px 40px;
+    padding: 0px 40px 40px 40px;
     column-gap: 10px;
     row-gap: 10px;
     grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
@@ -64,7 +66,6 @@ opacity: 0.5;
 
 /* ------------Grid--------------------- */
 .name{
-    position: sticky;
     top: 10px;
     z-index: 15;
     align-items: center;
@@ -93,29 +94,29 @@ opacity: 0.5;
     color: rgb(0, 0, 0);
     transition: color 0.3s ease;
     width: auto;
+    margin-left: 10px;
 }
 
 .navbar{
-    position: sticky;
+    position: fixed;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 15.04px;
     width: auto;
     height: 50px;
     justify-content: space-between;
     position: sticky;
-    top: 10px;
+    top: 0px;
     z-index: 100;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur (10px);
-    align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    filter: hue-rotate(5deg);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
-.name:hover ~ .dropdown, .dropdown:hover{
+.name:hover ~ .dropdown{
     opacity: 1;
-    transform: translateY(0px);
 }
 
 .dropdown{
@@ -123,14 +124,14 @@ opacity: 0.5;
     position: absolute;
     flex-direction: column;
     left: 40px;
-    background-color: rgba(193, 15, 15, 0.2);
-    border-radius: 14.5px ;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px ;
     min-width: 100px;
-    max-width: 250px;
+    max-width: 300px;
     z-index: 50;
     backdrop-filter: blur(10px);
-    transition: opacity 0.3s, transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-     transform: translateY(-60px);
+    transition: opacity 0.2s ease, transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform: translateY(-60px);
 }
 
 
