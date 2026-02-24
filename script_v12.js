@@ -1,7 +1,7 @@
 function showMenu() {
-  document.getElementById('dropdown', 'dropdownX').style.display = 'block';
+  document.getElementById('dropdown', 'dropdownX').style.opacity = '1';
 }
 
 function hideMenu() {
-  document.getElementById('dropdown', 'dropdownX').style.display = 'none';
+  document.getElementById('dropdown', 'dropdownX').style.opacity = '0';
 }

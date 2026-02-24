@@ -1,0 +1,322 @@
+@font-face{
+    font-family:"whois-mono";
+    src: url(ufonts/whois-mono.woffformat)format(woff);
+}
+
+/* ----------------- FONT ----------------- */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+background: url('data/Background2.png'), #ffffff;
+
+    font-family: "whois-mono", monospace;
+    font-size: 12px;
+}
+
+/* ----------BODY------------------- */
+
+img {
+    max-width: 100%; /* Bild passt sich container an */
+    height: auto;   /* Höhe behält proportion */
+}
+
+h1{
+    align-content: center;
+    position: sticky;
+    left: 20px;
+}
+
+p {
+    margin: 0;
+    font-size: large;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    align-self: center;
+}
+
+a:link{
+    opacity: 1;
+}
+
+a:visited {
+opacity: 0.5;
+}
+
+/* -------------most likely presets----------- */
+.grid-container {
+    display: grid; 
+    padding: 40px 40px 40px 40px;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
+    grid-template-areas:
+    ". text-1 . . .  image-1 image-1 image-1 image-1 image-1 . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    ". text-2 . . image-2 image-2 image-2 image-2 image-2 . . . ."
+    ". text-3 . . . image-3 image-3 image-3 image-3 image-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+}
+
+
+/* ------------Grid--------------------- */
+.name{
+    position: sticky;
+    top: 10px;
+    z-index: 15;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    background-color: blue;
+    border-radius: 25px;
+    width: 200px;
+    backdrop-filter: blur (10px);
+    height: inherit;
+    align-content: center;
+    
+}
+
+
+.name h1 {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    cursor: default;
+    position: sticky;
+    width: auto;
+    left: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    width: auto;
+}
+
+.navbar{
+    position: sticky;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    width: auto;
+    height: 50px;
+    justify-content: space-between;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur (10px);
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.name:hover ~ .dropdown, .dropdown:hover{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.dropdown{
+    opacity: 0;
+    position: absolute;
+    flex-direction: column;
+    left: 40px;
+    background-color: rgba(193, 15, 15, 0.2);
+    border-radius: 14.5px ;
+    min-width: 100px;
+    max-width: 250px;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s, transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+     transform: translateY(-60px);
+}
+
+
+.dropdown p:hover{
+    opacity: 1;
+    font-size: large;
+    position: sticky;
+}
+
+
+
+
+/* ----------------TITEL---------------- */
+
+.bio {
+    position: sticky;
+    top: 50px;
+    /* align-self, align vertically */
+}
+
+.bio p {
+    margin: 0;
+    align-self: bottom;
+    opacity: 1;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: justify;
+    transition: opacity 0.3s ease;
+    color: rgb(0, 0, 0)
+}
+
+.bio:hover{
+    opacity: 1;
+    /* -----------BIO--------------- */
+}
+.IgIcon{
+    position: sticky;
+    z-index: 15;
+    align-self: center;
+}
+
+.IgIcon img{
+    transition: transform 0.2s ease;
+    width: 25px;
+    height: 25px;
+}
+
+.IgIcon img:hover{
+    transform: scale(110%);
+}
+
+/* ---------Instagram -----------*/
+
+.image-1{
+    grid-area: image-1;
+    position: relative;
+    top: 120px;
+}
+         
+
+.image-1:hover{
+    transform: scale(125%) 3.3s ease;
+    z-index: 15;
+}
+
+.image-1 img{
+   transition: transform 0.5s ease;
+}
+
+.image-1 img:hover{
+    z-index: 0;
+    transform: scale(1.55);
+    filter: blur(0px) 
+}
+
+
+
+/* ------BEI HOVER 1. BILD NEHMEN UND DURCHSICHTIG MACHEN---------- */
+
+.text-1{
+    grid-area: text-1;
+    position:relative;
+    color: rgb(0, 0, 0);
+    top: 120px;
+}
+
+
+
+/* -------IMG1 Text 1------------- */
+.image-2{
+    grid-area: image-2;
+    position: relative;
+}
+
+.image-2 img{
+    position: relative;
+    top: 80px;
+    transition: transform 0.5s ease;
+}
+
+.image-2 img:hover{
+    transform:scale(155%);
+    z-index: 3;
+}
+
+
+/* IMG 2 */
+
+
+.image-3{
+    grid-area: image-3;
+    position: relative;
+    top: -25px;
+}
+
+.image-3 img{
+    position: relative;
+    top: 80px;
+    transition: transform 0.5s ease;
+
+}
+
+.image-3 img:hover{
+    transform:scale(155%);
+    z-index: 1;
+}
+
+.image-3:hover .text-3{
+    opacity: 1;
+    left: -300px;
+}
+
+
+/* IMG 3 */
+
+/* ------------PROJECTS------------- */
+
+
+.text-2{
+    grid-area: text-2;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 80px;
+}
+
+.text-3{
+    grid-area: text-3;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 80px;
+}
+
+/* Descriptions */
+
+
+
+
+.text-1, .text-2, .text-3{
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.image-1:hover ~ .text-1{
+    opacity: 1;
+    z-index: 1;
+}
+
+.image-2:hover ~ .text-2{
+    opacity: 1;
+    z-index: 1;
+}
+
+.image-3:hover ~ .text-3{
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.grid-container:has(.blur:hover) .blur{
+    filter: blur(2px);
+    opacity: 1;
+    transition: 
+    filter 0.3s ease, 
+    opacity 0.3 ease;
+}
+
+.blur:hover {
+    filter: blur(0px) !important;
+}

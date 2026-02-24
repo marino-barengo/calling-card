@@ -11,26 +11,28 @@
     <title>Marino Barengo</title>
   
   <body>
-    
-    <div class="grid-container">
-        <div class="name">
-        <h1><a href="mailto:marinonicola_bareng@sluz.ch">Marino Barengo</a></h1> <!-- EMAIL -->
-      </div>
-
-      <div class="bio">
-        <p>Hello, I'm a graphic design student at <a href = "https://fachklassegrafik.ch/" target="_blank">Fachklasse Grafik Luzern</a>. </p>
-      </div>
-
-      <div class="IgIcon">
-        <a href="https://www.instagram.com/cxymwo/" target="_blank"><img src="data/IgIcon.svg"/> </a>
-      </div>
+     <div class="navbar">
+      <div class="name" onmouseenter="showMenu()" onmouseleave="hideMenu()">
+        <h1>Marino Barengo</h1> <!-- EMAIL --><!-- EMAIL -->
         </div>
+        <div class="IgIcon">
+        <a href="https://www.instagram.com/cxymwo/" target="_blank"><img src="data/IgIconT2.png"/> </a>
+      </div>
+       
+    </div>
+
+    <div class="dropdown" id="dropdown" onmouseenter="showMenu()" onmouseleave="hideMenu()">
+      <div class="content" id="dropdownX" onmouseenter="showMenu()" onmouseleave="hideMenu()"></div>
+       <p>Hello, I'm a graphic design student at <a href = "https://fachklassegrafik.ch/" target="_blank">Fachklasse Grafik Luzern.</a> </p>
+    </div>
+    </div>
+
+  
+ 
+<div class="grid-container">
       
-
-<!-- ----------------INSTAGRAM----------------- -->
-
-      <div class="image-1">
-        <img src="data/paris-1.jpg" alt="picture" class="a"/>
+      <div class="image-1 blur" id="projekt1">
+        <img src="data/paris-1.jpg" alt="picture"/>
       </div>
 
        <div class="text-1">
@@ -38,25 +40,25 @@
         </p> 
       </div>
 
-       <!-- -----------Bild und Text 1----------- -->
+       
 
-       <div class="image-2">
+       <div class="image-2 blur">
         <img src="data/layout-1.jpg" />
       </div>
 
       <div class="text-2">
         <p>Projektbeschrieb Bild 2</p>
       </div>
-<!-- ------------------Bild und Text 2--------------- -->
-       <div class="image-3">
+
+       <div class="image-3 blur">
         <img src="data/kreuzundquer_1.jpg" />
       </div>
 
        <div class="text-3">
         <p>Projektbeschrieb Bild 3</p>
       </div>
-    
-<!-- ------------------Bild und Text 3--------------- -->
+    </div>
+
       <!-- ----MEINE DIVS/CONTAINER------ -->
 
 
@@ -72,7 +74,7 @@
 
 
 
-
+ <script src="script_v12.js"></script>
     <!-- ACHTUNG GANZER INHALT VOR DIESER LINIE -->
   </body>
   
