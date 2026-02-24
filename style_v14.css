@@ -77,7 +77,7 @@ opacity: 0.5;
     backdrop-filter: blur (10px);
     height: inherit;
     align-content: center;
-    
+    width: 300px;
 }
 
 
@@ -101,7 +101,7 @@ opacity: 0.5;
     position: fixed;
     display: flex;
     background-color: rgba(255, 255, 255, 0);
-    border-radius: 25px;
+    border-radius: 15.04px;
     width: auto;
     height: 50px;
     justify-content: space-between;
@@ -109,7 +109,6 @@ opacity: 0.5;
     top: 0px;
     z-index: 100;
     backdrop-filter: blur(10px);
-    filter: hue-rotate(5deg);
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -124,10 +123,9 @@ opacity: 0.5;
   top: 60px;
   left: 10px;
   max-width: 300px;
-  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.34, 2, 0.64, 1);
-  background-color: rgb(0, 0, 255);
-  border-radius: 25px;
-  height: 300px;
+  transition: opacity 0.3s, transform 0.5s cubic-bezier(0.34, 2, 0.64, 1);
+  margin-top: -10px;
+  padding-top: 10px;;
 }
 
 
