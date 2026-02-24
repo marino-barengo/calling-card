@@ -62,9 +62,26 @@ opacity: 0.5;
     ". text-2 text-2 . image-2 image-2 image-2 image-2 image-2 . . . ."
     ". text-3 text-3 . . image-3 image-3 image-3 image-3 image-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
-
-
+/* MOBILE GRID */
+/* mobile override 
+@media max-width sagt: sobald media/screen mehr als 768px dann das alte grid */
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        row-gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "image-1 image-1 text-1 text-1 ."
+        "image-1 image-1 text-1 text-1 ."
+        "image-2 image-2 text-2 text-2 ."
+        "image-2 image-2 text-2 text-2 ."
+        "image-3 image-3 text-3 text-3 ."
+        "image-3 image-3 text-3 text-3 .";
+        padding: 10px;
+    }
+}
 /* ------------Grid--------------------- */
+
 .name{
     top: 10px;
     z-index: 15;
@@ -75,7 +92,7 @@ opacity: 0.5;
     border-radius: 25px;
     width: 200px;
     backdrop-filter: blur (10px);
-    height: inherit;
+    height: 50px;
     align-content: center;
     width: 300px;
 }
@@ -112,7 +129,7 @@ opacity: 0.5;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 15.04px;
     width: auto;
-    height: 50px;
+    height: 100px;
     justify-content: space-between;
     position: sticky;
     top: 0px;
@@ -177,7 +194,8 @@ opacity: 0.5;
 .IgIcon{
     position: sticky;
     z-index: 15;
-    align-self: center;
+    top: 20px;
+    /* top: 50px; */
 }
 
 .IgIcon img{
@@ -222,6 +240,7 @@ opacity: 0.5;
     grid-area: text-1;
     position:relative;
     color: rgb(0, 0, 0);
+    z-index: 120;
 }
 
 
