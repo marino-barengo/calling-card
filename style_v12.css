@@ -5,12 +5,15 @@
 
 /* ----------------- FONT ----------------- */
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
 background: url('data/Background2.png'), #ffffff;
 
     font-family: "whois-mono", monospace;
     font-size: 12px;
-    display: flex;
 }
 
 /* ----------BODY------------------- */
@@ -22,12 +25,13 @@ img {
 
 h1{
     font-size: 12px;
-    align-self: center;
+    align-content: center;
     position: sticky;
 }
 
 p {
     margin: 0;
+    font-size: large;
 }
 
 a {
@@ -42,7 +46,6 @@ a:link{
 
 a:visited {
 opacity: 0.5;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* -------------most likely presets----------- */
@@ -53,37 +56,101 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     row-gap: 10px;
     grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
     grid-template-areas:
-    " name name name . . . . . . . . . IgIcon" /* deifiniton was welche/wieviele kolumnen überquert */
-    " bio bio bio . . . . . . . . . ."
-    ". text-1 . . .  image-1 image-1 image-1 image-1 . . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
-    ". text-2 . . image-2 image-2 image-2 image-2 . . . . ."
-    ". text-3 . . . image-3 image-3 image-3 image-3 . . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+    "bio bio bio . . . . . . . . . ."
+    ". text-1 . . .  image-1 image-1 image-1 image-1 image-1 . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    ". text-2 . . image-2 image-2 image-2 image-2 image-2 . . . ."
+    ". text-3 . . . image-3 image-3 image-3 image-3 image-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 
 
 /* ------------Grid--------------------- */
 .name{
-    grid-area: name;
     position: sticky;
     top: 10px;
     z-index: 15;
-    align-self: center;
+    align-items: center;
+    background-color: blue;
+    border-radius: 14.5px;
+    width: 200px;
+    backdrop-filter: blur (10px);
+    height: inherit;
 }
 
-.name h1{
+
+.name h1 {
     text-align: left;
     font-size: 12px;
     color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
     cursor: default;
     position: sticky;
-    transition: transform 0.2s ease;
+    width: auto;
+    left: 20px;
+    align-self: center;
 }
 
-.name h1:hover{
-    transform: scale(110%);
+.navbar{
     position: sticky;
-    transform-origin: left;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 15.04px;
+    width: auto;
+    height: 50px;
+    justify-content: space-between;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    filter: hue-rotate(5deg);
 }
+
+.dropdown{
+    display: none;
+    position: absolute;
+    top: 30;
+    left: 0;
+    flex-direction: column;
+    left: 40px;
+     background-color: rgba(246, 246, 246, 0);
+     border-radius: 14.5px ;
+     min-width: 100px;
+     z-index: 50;
+     backdrop-filter: blur(10px);
+}
+
+.dropdown:hover{
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    left: 40px;
+}
+
+.dropdown a{
+    display: block;
+    font-size: large;
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+.dropdown a:hover{
+    display: block;
+    font-size: large;
+}
+
+.name h1 {
+    text-align: left;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+    cursor: default;
+    position: sticky;
+    width: auto;
+    left: 20px;
+    align-self: center;
+}
+
 
 /* ----------------TITEL---------------- */
 
@@ -100,21 +167,25 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     opacity: 1;
     line-height: 20px;
     letter-spacing: 0px;
+    text-align: justify;
     transition: opacity 0.3s ease;
     color: rgb(0, 0, 0)
 }
 
-
-
+.bio:hover{
+    opacity: 1;
+    /* -----------BIO--------------- */
+}
 .IgIcon{
-    grid-area: IgIcon;
     position: sticky;
-    top: 20px;
     z-index: 15;
+    align-self: center;
 }
 
 .IgIcon img{
     transition: transform 0.2s ease;
+    width: 25px;
+    height: 25px;
 }
 
 .IgIcon img:hover{
@@ -123,16 +194,15 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 /* ---------Instagram -----------*/
 
-
 .image-1{
     grid-area: image-1;
     position: relative;
-    top: 115px;
-    place-items: center;
+    top: 120px;
 }
          
 
 .image-1:hover{
+    transform: scale(125%) 3.3s ease;
     z-index: 15;
 }
 
@@ -140,18 +210,11 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    transition: transform 0.5s ease;
 }
 
-.text-1:not(:hover), .image-1{
-   opacity: 1; 
-}
-
-.image-1 img:hover, .text-1:hover{
+.image-1 img:hover{
+    z-index: 0;
     transform: scale(1.55);
+    filter: blur(0px) 
 }
-
-.image-1:hover, .text-1{
-   opacity: 1;
-}
-
 
 
 
@@ -161,7 +224,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     grid-area: text-1;
     position:relative;
     color: rgb(0, 0, 0);
-    top: 115px;
+    top: 120px;
 }
 
 
@@ -180,14 +243,12 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 .image-2 img:hover{
     transform:scale(155%);
-    z-index: 1;
+    z-index: 3;
 }
 
-.image-2:hover .text-2{
-    opacity: 1;
-}
 
 /* IMG 2 */
+
 
 .image-3{
     grid-area: image-3;
@@ -233,3 +294,39 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Descriptions */
+
+
+
+
+.text-1, .text-2, .text-3{
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.image-1:hover ~ .text-1{
+    opacity: 1;
+    z-index: 1;
+}
+
+.image-2:hover ~ .text-2{
+    opacity: 1;
+    z-index: 1;
+}
+
+.image-3:hover ~ .text-3{
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.grid-container:has(.blur:hover) .blur{
+    filter: blur(2px);
+    opacity: 1;
+    transition: 
+    filter 0.3s ease, 
+    opacity 0.3 ease;
+}
+
+.blur:hover {
+    filter: blur(0px) !important;
+}
