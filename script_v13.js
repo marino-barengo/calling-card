@@ -1,6 +1,6 @@
 function showMenu() {
     document.getElementById('dropdown').style.opacity = '1';
-    document.getElementById('dropdown').style.transform = 'translateY(10px)';
+    document.getElementById('dropdown').style.transform = 'translateY(18px)';
 }
 
 function hideMenu() {

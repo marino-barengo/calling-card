@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Marino Barengo" />
+     <meta name="description" content="Hallo, ich bin Grafiker in Ausbildung an der Fachklasse Grafik Luzern."/>
+     <meta name="link" content="instagram"/>
+    <link rel="stylesheet" href="style_v15.css" />
+    <title>Marino Barengo</title>
+  
+  <body>
+     <div class="navbar">
+        <div class="name blur" onmouseenter="showMenu()" onmouseleave="hideMenu()">
+            <h1>Marino Barengo</h1>
+        </div>
+
+<div class="dropdown" id="dropdown" onmouseenter="showMenu()" onmouseleave="hideMenu()">
+        <p>Hello, I'm a graphic design student at <a href="https://fachklassegrafik.ch/" target="_blank"><strong>Fachklasse Grafik Luzern </strong> based in Switzerland.</a></p>
+    </div>
+
+        <div class="IgIcon" alt="instagram">
+            <a href="https://www.instagram.com/cxymwo/" target="_blank"><img src="data/IgIconT2.png"/></a>
+        </div>
+    </div>
+
+<svg style="display:none">
+<filter id="glass"
+        x="-20%" y="-20%"
+        width="140%" height="140%"
+        filterUnits="zserSpaceOnUse"
+        color-interpolation-filters="sRGB">
+        <feImage  xlink:href="glassfilter.svg"
+                  result="dispmap" 
+                  preserveAspectRatio="none"
+                  x="0" y="0"
+                  width=" 100%" height="100%"/>
+        <feDisplacementMap in="SourceGraphic"
+                          in2="dispmap"
+                          scale="60"
+                          xChannelSelector="R"
+                          yChannelSelector="G" 
+                          result="displaced"/>
+                          <feGaussianBlur in="displaced" stdDeviation="2" result="blurred"/>
+                          <feComposite in="blurred" in2="SourceGraphic" operator="over"/>
+       </filter>
+       </svg>
+  
+
+  
+
+<div class="grid-container">
+      
+      <div class="image-1 blur">
+        <img src="data/paris-1.jpg" alt="picture"/>
+      </div>
+
+       <div class="text-1">
+        <p> Time does not stand still
+            and nowhere is that more obvious than in the Galerie Vivienne in Paris. Within a single century, this place experienced birth, glory, decline, and rebirth. It is a space defined by transformation.
+            The mosaic floor, which runs through the entire gallery, became my medium. A surface walked on for generations, carrying the marks of time. 
+            The result is a publication that doesn't just document the Galerie Vivienne — it tries to embody it.
+            <br> <strong>Paris, 2025, tout bouge </strong>
+        </p> 
+      </div>
+
+       
+
+       <div class="image-2 blur">
+        <img src="data/layout-1.jpg" />
+      </div>
+
+      <div class="text-2">
+        <p>Some things are designed once and never meant to be touched again. 
+          Conceived nearly a century ago, they still feel like they belong to tomorrow. 
+          This catalogue sits at the intersection of past and future, exploring what makes a design truly timeless. 
+          The result is not just a document of three iconic lamps, it is a reflection on the space between then and now.
+          <br><strong> 2024, design icons</strong></p>
+      </div>
+
+       <div class="image-3 blur">
+        <img src="data/kreuzundquer_1.jpg" />
+      </div>
+
+       <div class="text-3">
+        <p>One hour, every day. The commute to Emmenbrücke is reliable… 
+          until it isn't. This brochure is a portrait of a place shaped by traffic, delays, and the quiet frustration of getting from A to B.
+           But rather than documenting the problem, it imagines alternatives — bikes on rail tracks, buses in bicycle lanes. A small, slightly 
+           absurd exploration of what it means to depend on something that doesn't always show up.
+          <br> <strong>2025, crisscrossing</strong>
+        </p>
+      </div>
+    </div>
+
+      <!-- ----MEINE DIVS/CONTAINER------ -->
+
+
+      
+      
+      
+
+
+      <!-- ACHTUNG ENDE GRID CONTAINER -->
+    </div>
+
+    
+
+
+
+ <script src="script_v13.js"></script>
+    <!-- ACHTUNG GANZER INHALT VOR DIESER LINIE -->
+  </body>
+  
+</html>
