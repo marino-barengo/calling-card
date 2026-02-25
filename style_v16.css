@@ -322,12 +322,12 @@ transform: scale(120%);
 .image-2{
     grid-area: image-2;
     position: relative;
-    top: -300px;
 }
 
 .image-2 img{
     position: relative;
     transition: transform 0.3s ease;
+     top: -300px;
 }
 
 .image-2 img:hover{
