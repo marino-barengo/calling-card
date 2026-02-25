@@ -88,17 +88,20 @@ opacity: 0.5;
     align-items: center;
     justify-content: center;
     text-align: justify;
-    background-color: blue;
+    background-color: rgba(255, 255, 255, 0.292);
     border-radius: 25px;
     width: 200px;
-    backdrop-filter: blur (10px);
+    -webkit-backdrop-filter: blur(10px) url(#glass);
+    backdrop-filter: blur(10px) url(#glass);
     height: 50px;
     align-content: center;
     width: 300px;
     margin-top: 15px;
+    border: solid rgba(255, 255, 255, 0.6)
 }
 
 .name:hover{
+    background-color: rgba(193, 193, 193, 0.4);
     transition: transform 0.3s cubic-bezier(0.34, 2, 0.64, 1);;
     transform: scale(110%)
 }
@@ -139,10 +142,11 @@ opacity: 0.5;
     backdrop-filter: blur(10px) url(#glass);
     margin-left: 10px;
     margin-right: 10px;
+    border: solid rgba(255, 255, 255, 0.6)
 }
 
 .navbar:hover{
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(193, 193, 193, 0.4);
 
 }
 .name:hover ~ .dropdown{
@@ -158,6 +162,10 @@ opacity: 0.5;
   margin-top: -10px;
   padding-top: 10px;;
   opacity: 0;
+  -webkit-backdrop-filter: blur(10px) url(#glass);
+    backdrop-filter: blur(10px) url(#glass);
+    background-color: rgba(255, 255, 255, 0.1);
+    
 }
 
 
@@ -197,6 +205,7 @@ opacity: 0.5;
     position: sticky;
     z-index: 15;
     margin-top: 30px;
+    margin-right:20px;
     /* top: 50px; */
 }
 
@@ -251,7 +260,7 @@ opacity: 0.5;
 .image-2{
     grid-area: image-2;
     position: relative;
-    top: -60px;
+    top: -200px;
 }
 
 .image-2 img{
@@ -277,7 +286,7 @@ opacity: 0.5;
 
 .image-3 img{
     position: relative;
-    top: 80px;
+    top: -200px;
     transition: transform 0.5s ease;
 
 }
@@ -302,6 +311,7 @@ opacity: 0.5;
     grid-area: text-2;
     color: rgb(0, 0, 0);
     position: relative;
+    top: -200px;
 }
 
 .text-3{
@@ -325,7 +335,7 @@ background-color:rgba(255, 255, 255, 0.1);
 
 .image-1:hover ~ .text-1{
     opacity: 1;
-    z-index: 1;
+    z-index: 140;
     transform: translateX(-20px) 0.3s ease;
 }
 
