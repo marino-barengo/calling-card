@@ -57,11 +57,14 @@ opacity: 0.5;
     padding: 0px 40px 40px 40px;
     column-gap: 10px;
     row-gap: 10px;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 0.5fr 0.5fr;   /* Definition abstand kolumne */
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;   /* Definition abstand kolumne */
     grid-template-areas:
-    ". text-1 text-1 . .  image-1 image-1 image-1 image-1 image-1 . . . " /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
-    ". text-2 text-2 . image-2 image-2 image-2 image-2 image-2 . . . ."
-    ". text-3 text-3 . . image-3 image-3 image-3 image-3 image-3 . . ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
+    ". . . image-1 image-1 image-1 image-1 . ."
+    ". text-1 text-1 . . . . . ."  /* bsp. img-1 geht über 3 Spalten und txt-1 nimmt auch eine spalte platz */
+    ". image-2 image-2 image-2 image-2 . . . ."
+    ". . . . . text-2 text-2 . ." 
+    ". . image-3 image-3 image-3 image-3 . . ."
+    ". . . . . . text-3 text-3 ."; /* Ein Punkt (.) bedeutet spalte bleibt leer */
 }
 /* MOBILE GRID */
 /* mobile override 
@@ -97,11 +100,12 @@ opacity: 0.5;
     align-content: center;
     width: 300px;
     margin-top: 15px;
-    border: solid rgba(255, 255, 255, 0.6);
+    border: solid rgba(255, 255, 255, 0.4);
+    filter: brightness(110%)
 }
 
 .name:hover{
-    background-color: rgba(193, 193, 193, 0.4);
+    background-color: rgba(224, 239, 255, 0.4);
     transition: transform 0.3s cubic-bezier(0.34, 2, 0.64, 1);;
     transform: scale(110%)
 }
@@ -132,6 +136,7 @@ opacity: 0.5;
     display: flex;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
+    transition: 0.3s ease;
     width: 100%;
     height: 100px;
     justify-content: space-between;
@@ -140,11 +145,11 @@ opacity: 0.5;
     z-index: 100;
     -webkit-backdrop-filter: blur(10px) url(#glass);
     backdrop-filter: blur(10px) url(#glass);
-    border: solid rgba(255, 255, 255, 0.6)
+    border: solid rgba(255, 255, 255, 0.4)
 }
 
 .navbar:hover{
-    filter: brightness(150%)
+    filter: brightness(110%)
 
 }
 .name:hover ~ .dropdown{
@@ -173,7 +178,7 @@ opacity: 0.5;
 }
 
 .dropdown:hover{
-    background-color: rgba(193, 193, 193, 0.6);
+    background-color: rgba(236, 242, 255, 0.4);
     filter: brightness(115%);
 }
 
@@ -307,6 +312,7 @@ transform: scale(120%);
     grid-area: text-1;
     position:relative;
     color: rgb(0, 0, 0);
+    top: -100px;
     z-index: 120;
 }
 
@@ -316,18 +322,17 @@ transform: scale(120%);
 .image-2{
     grid-area: image-2;
     position: relative;
-    top: -200px;
+    top: -300px;
 }
 
 .image-2 img{
     position: relative;
-    top: 80px;
     transition: transform 0.3s ease;
 }
 
 .image-2 img:hover{
     transform:scale(140%);
-    z-index: 3;
+    z-index: 900;
 }
 
 
@@ -337,7 +342,7 @@ transform: scale(120%);
 .image-3{
     grid-area: image-3;
     position: relative;
-    top: -25px;
+    top: -450px;
 }
 
 .image-3 img{
@@ -354,7 +359,7 @@ transform: scale(120%);
 
 .image-3:hover .text-3{
     opacity: 1;
-    left: -300px;
+    left: -2000px;
 }
 
 
@@ -367,32 +372,43 @@ transform: scale(120%);
     grid-area: text-2;
     color: rgb(0, 0, 0);
     position: relative;
-    top: -200px;
+    top: -600px;
 }
 
 .text-3{
     grid-area: text-3;
     color: rgb(0, 0, 0);
     position: relative;
-    top: -300px;
+    top: -1100px;
 }
 
 /* Descriptions */
 
-
+.text-1 p, .text-2 p, .text-3 p{
+    margin-left: 10px;
+    margin-left: 10px;
+}
 
 
 .text-1, .text-2, .text-3{
     display: grid; 
 opacity: 0;
 transition: opacity 0.3s ease 0.1s;
-background-color:rgba(255, 255, 255, 0.1);
+background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    width: 120%;
+    height: 120%;
+    align-content: center;
+    -webkit-backdrop-filter: blur(2px) url(#glass);
+    backdrop-filter: blur(10px) url(#glass);
+    transition: transform 0.2s cubic-bezier(0.34, 2, 0.64, 1);
 }
 
 .image-1:hover ~ .text-1{
     opacity: 1;
     z-index: 140;
     transform: translateX(-20px) 0.3s ease;
+    filter: brightness(110%);
 }
 
 .image-2:hover ~ .text-2{
@@ -407,7 +423,7 @@ background-color:rgba(255, 255, 255, 0.1);
 
 
 .grid-container:has(.blur:hover) .blur{
-    filter: blur(2px);
+    filter: blur(10px) brightness(90%);
     opacity: 1;
     transition: 
     filter 0.3s ease, 
