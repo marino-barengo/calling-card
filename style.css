@@ -97,6 +97,19 @@ opacity: 0.5;
         padding: 10px;
     }
 }
+
+@media (min-width: 768px), (max-width: 1046px){
+    .grid-container {
+        display: grid;
+        row-gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        " image-1 image-1 image-1 text-1 text-1"
+        "text-2 text-2 image-2 image-2 image-2"
+        "image-3 image-3 image-3 text-3 text-3";
+        padding: 10px;
+    }
+}
 /* ------------Grid--------------------- */
 
 .name{
@@ -347,11 +360,11 @@ transform: scale(120%);
 }
 
 .image-2:hover{
-    z-index: 50;
+    z-index: 30;
 }
 .image-2 img:hover{
     transform:scale(130%);
-    z-index: 900;
+    z-index: 40;
 }
 
 .text-2{
@@ -363,6 +376,7 @@ transform: scale(120%);
     width: 320px;
     height: 240px;
     align-self: center;
+    z-index: 100;
 }
 
 /* IMG 2 */

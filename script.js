@@ -13,9 +13,5 @@ function hideMenu() {
 const checkbox = document.getElementById('light');
 
 checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-        document.body.style.backgroundImage = "url('data/background_light.svg')";
-    } else {
-        document.body.style.backgroundImage = "url('data/background_dark.svg')";
-    }
+    document.body.classList.toggle('inverted');
 });
