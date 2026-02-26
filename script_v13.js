@@ -7,3 +7,5 @@ function hideMenu() {
     document.getElementById('dropdown').style.opacity = '0';
     document.getElementById('dropdown').style.transform = 'translateY(-50px)';
 }
+
+// curosr
