@@ -352,11 +352,11 @@ transform: scale(120%);
     position: relative;
      top: -100px;
      width: 568.65px;;
+     transform: transition 0.3s ease;
 }
 
 .image-2 img{
     position: relative;
-    transition: transform 0.3s ease;
 }
 
 .image-2:hover{
