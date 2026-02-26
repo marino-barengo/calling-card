@@ -522,3 +522,6 @@ width: 250px;
     /* styles when light is ON, e.g. */
     background: url('data/BackgroundD.jpg'), #000000;
 }
+
+#light:checked ~ body { background-image: url('data/BackgroundD.jpg')
+}

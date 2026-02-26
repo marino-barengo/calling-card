@@ -8,4 +8,14 @@ function hideMenu() {
     document.getElementById('dropdown').style.transform = 'translateY(-50px)';
 }
 
-// curosr
+// light mode
+
+const checkbox = document.getElementById('light');
+
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        document.body.style.backgroundImage = "url('data/background_light.svg')";
+    } else {
+        document.body.style.backgroundImage = "url('data/background_dark.svg')";
+    }
+});
