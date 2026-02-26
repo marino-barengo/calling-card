@@ -357,6 +357,7 @@ transform: scale(120%);
 
 .image-2 img{
     position: relative;
+    transform: transition 0.3s ease;
 }
 
 .image-2:hover{
